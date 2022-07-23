@@ -1,12 +1,13 @@
-import './App.css'
-
+import Banner from "./components/Banner";
+import Header from "./components/Header";
 
 function App() {
   return (
     <div className="App">
-      <h1>TransParente</h1>
+      <Header />
+      <Banner />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
