@@ -1,6 +1,8 @@
 import Banner from "./components/Banner";
 import Header from "./components/Header";
 import BestNews from "./components/BestNews";
+import ContentHome from "./components/ContentHome";
+import Footer from "./components/Footer";
 import { Flex, Spacer } from "@chakra-ui/react";
 
 import * as React from "react";
@@ -19,6 +21,9 @@ function App() {
       >
         <BestNews />
       </Flex>
+
+      <ContentHome />
+      <Footer />
     </div>
   );
 }
