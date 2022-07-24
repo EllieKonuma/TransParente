@@ -1,5 +1,6 @@
 import { Flex, Heading } from "@chakra-ui/react";
 import React from "react";
+import DarkModeSwitch from "./DarkModeSwitch";
 
 function Header() {
   return (
@@ -15,6 +16,7 @@ function Header() {
       borderBottom={"1px solid white"}
     >
       <Heading>TransParente</Heading>
+      <DarkModeSwitch />
     </Flex>
   );
 }
