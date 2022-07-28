@@ -12,7 +12,7 @@ function Footer() {
       wrap={"warp"}
       textAlign={"center"}
       justifyContent={"space-around"}
-      borderTop={"1px solid black"}
+      borderTop={"1px solid"}
     >
       <Text
         bgGradient="linear(to-r, blue.200, pink.200, pink.200, blue.200)"

@@ -16,6 +16,13 @@ function Header() {
       borderBottom={"1px solid white"}
     >
       <Heading>TransParente</Heading>
+      <nav>
+        <ul>
+          <li>vector</li>
+          <li>photos</li>
+          <li>psd</li>
+        </ul>
+      </nav>
       <DarkModeSwitch />
     </Flex>
   );
