@@ -9,7 +9,7 @@ import App from "./App";
 // const theme = extendTheme({ config });
 const rootElement = document.getElementById("root");
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
     <ChakraProvider>
       <App />
