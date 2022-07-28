@@ -1,7 +1,7 @@
 import { Flex, Heading, Text } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import React from "react";
 import DarkModeSwitch from "./DarkModeSwitch";
-import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -19,15 +19,13 @@ function Header() {
       <Heading>TransParente</Heading>
 
       <Link to={"/"}>
-        <Text>
-          <Home>Home</Home>
-        </Text>
+        <Text>Home</Text>
       </Link>
       <Link to={"/blog"}>
         <Text>Blog</Text>
       </Link>
-      <Link to={"/about-us"}>
-        <Text>About Us</Text>
+      <Link to={"/sobre-nos"}>
+        <Text>Sobre Nós</Text>
       </Link>
 
       <DarkModeSwitch />
