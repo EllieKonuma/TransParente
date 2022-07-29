@@ -1,25 +1,26 @@
 import * as React from "react";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Home from "./Pages/Home/Index";
-import Blog from "./Pages/Blog/Index";
-import AboutUs from "./Pages/AboutUs/Index";
+import Blog from "./Pages/Blog";
+import Home from "./Pages/Home";
+import SobreNos from "./Pages/SobreNos";
+
 // import { Text, Heading, Flex, Stack } from "@chakra-ui/core";
 // import { ChakraProvider } from "@chakra-ui/react";
 
-function App() {
+function Router() {
   return (
     <div className="App">
-      <Router>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/sobre-nos" element={<AboutUs />} />
+          <Route path="/sobre-nos" element={<SobreNos />} />
         </Routes>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
 
-export default App;
+export default Router;

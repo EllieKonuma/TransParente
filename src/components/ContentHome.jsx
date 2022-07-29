@@ -1,5 +1,4 @@
-import { Box } from "@chakra-ui/react";
-import { Flex, Spacer } from "@chakra-ui/react";
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 
 function ContentHome() {
   return (
@@ -17,13 +16,12 @@ function ContentHome() {
         mr={"1em"}
         borderRadius={"10px"}
       ></Box>
-      <Box
-        bg="tomato"
-        h="550px"
-        w={"300px"}
-        ml={"1em"}
-        borderRadius={"10px"}
-      ></Box>
+      <Box bg="blue" h="550px" w={"300px"} ml={"1em"} borderRadius={"10px"}>
+        <Flex>
+          <Image />
+          <Text></Text>
+        </Flex>
+      </Box>
     </Flex>
   );
 }

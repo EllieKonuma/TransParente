@@ -16,7 +16,9 @@ function Header() {
       justifyContent={"space-around"}
       borderBottom={"1px solid white"}
     >
-      <Heading>TransParente</Heading>
+      <Link to={"/"}>
+        <Heading>TransParente</Heading>
+      </Link>
 
       <Link to={"/"}>
         <Text>Home</Text>
@@ -32,5 +34,7 @@ function Header() {
     </Flex>
   );
 }
+
+// fazer estilização dos links do header
 
 export default Header;

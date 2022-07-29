@@ -7,7 +7,7 @@ import {
 import Post from "./Post";
 import React, { useEffect, useState } from "react";
 
-function BestNews() {
+function BestPosts() {
   const [posts, setPosts] = useState(null);
   const [skeletonSize] = useState([1, 2, 3, 4, 5, 6]);
 
@@ -51,4 +51,4 @@ function BestNews() {
   );
 }
 
-export default BestNews;
+export default BestPosts;
