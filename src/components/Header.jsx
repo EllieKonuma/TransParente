@@ -1,5 +1,5 @@
 import { Flex, Heading, Text } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import React from "react";
 import DarkModeSwitch from "./DarkModeSwitch";
 
@@ -21,9 +21,9 @@ function Header() {
         <Heading>TransParente</Heading>
       </Link>
 
-      <Link to={"/"}>
+      <NavLink to={"/"}>
         <Text fontSize={"2xl"}>Home</Text>
-      </Link>
+      </NavLink>
       <Link to={"/blog"}>
         <Text fontSize={"2xl"}>Blog</Text>
       </Link>

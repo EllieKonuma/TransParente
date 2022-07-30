@@ -52,8 +52,9 @@ function BestPosts() {
                 <SkeletonText mt="4" noOfLines={4} spacing="4" />
               </Box>
             ))
-          : posts.slice(0, 3).map((post) => {
-              return (
+          : posts
+              .slice(0, 3)
+              .map((post) => (
                 <TrendingPost
                   authorName={post.authorName}
                   authorPic={post.authorPic}
@@ -61,8 +62,7 @@ function BestPosts() {
                   key={post.id}
                   title={post.title}
                 />
-              );
-            })}
+              ))}
       </Flex>
     </Box>
   );

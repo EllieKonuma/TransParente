@@ -1,5 +1,4 @@
 import { Box, Center, Flex, Icon, Text } from "@chakra-ui/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 import { TbGenderTransgender } from "react-icons/tb";

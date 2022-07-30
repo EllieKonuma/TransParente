@@ -31,8 +31,6 @@ function Contribuintes() {
       flexDir={"column"}
       alignItems={"flex-start"}
       h="550px"
-      w={"300px"}
-      ml={"1em"}
       borderRadius={"10px"}
     >
       <Text fontSize={"3xl"} fontWeight={"bold"}>

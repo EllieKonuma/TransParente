@@ -1,12 +1,16 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-import { Text, Spacer, Heading } from "@chakra-ui/react";
+import { Text, Spacer, Heading, Center } from "@chakra-ui/react";
+import BlogPosts from "../components/BlogPosts";
 
 function Blog() {
   return (
     <div>
-      <Header />;
+      <Header />
+      <Center mt={"90px"}>
+        <BlogPosts />
+      </Center>
       <Footer />
     </div>
   );
