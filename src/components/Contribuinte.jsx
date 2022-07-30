@@ -1,7 +1,7 @@
 import { Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
 
-function Contribuentes({ authorPic, authorName }) {
+function Contribuinte({ authorPic, authorName }) {
   return (
     <Flex mt={"1em"} alignItems={"center"}>
       <Image
@@ -18,4 +18,4 @@ function Contribuentes({ authorPic, authorName }) {
   );
 }
 
-export default Contribuentes;
+export default Contribuinte;

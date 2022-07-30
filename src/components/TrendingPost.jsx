@@ -1,7 +1,7 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
 
-function Post({ number, authorPic, authorName, title }) {
+function TrendingPost({ number, authorPic, authorName, title }) {
   return (
     <Flex h="150px" borderRadius={"10px"} w={"400px"}>
       <Box mr={"2em"}>
@@ -28,4 +28,4 @@ function Post({ number, authorPic, authorName, title }) {
   );
 }
 
-export default Post;
+export default TrendingPost;

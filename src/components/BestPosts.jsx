@@ -8,7 +8,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-import Post from "./Post";
+import TrendingPost from "./TrendingPost";
 import React, { useEffect, useState } from "react";
 import { HiTrendingUp } from "react-icons/hi";
 
@@ -54,7 +54,7 @@ function BestPosts() {
             ))
           : posts.slice(0, 3).map((post) => {
               return (
-                <Post
+                <TrendingPost
                   authorName={post.authorName}
                   authorPic={post.authorPic}
                   number={post.id}
