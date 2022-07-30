@@ -3,7 +3,7 @@ import React from "react";
 
 function Post({ number, authorPic, authorName, title }) {
   return (
-    <Flex height="150px" borderRadius={"10px"}>
+    <Flex h="150px" borderRadius={"10px"} w={"400px"}>
       <Box mr={"2em"}>
         <Text fontSize="4xl" fontWeight={"extrabold"}>
           {number}

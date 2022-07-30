@@ -15,19 +15,20 @@ function Header() {
       position={"fixed"}
       justifyContent={"space-around"}
       borderBottom={"1px solid white"}
+      top={"0px"}
     >
       <Link to={"/"}>
         <Heading>TransParente</Heading>
       </Link>
 
       <Link to={"/"}>
-        <Text>Home</Text>
+        <Text fontSize={"2xl"}>Home</Text>
       </Link>
       <Link to={"/blog"}>
-        <Text>Blog</Text>
+        <Text fontSize={"2xl"}>Blog</Text>
       </Link>
       <Link to={"/sobre-nos"}>
-        <Text>Sobre Nós</Text>
+        <Text fontSize={"2xl"}>Sobre Nós</Text>
       </Link>
 
       <DarkModeSwitch />

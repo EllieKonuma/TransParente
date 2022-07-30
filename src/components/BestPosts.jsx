@@ -1,15 +1,20 @@
 import {
-  SimpleGrid,
   Box,
   SkeletonCircle,
   SkeletonText,
+  Text,
+  Icon,
+  Flex,
+  useColorModeValue,
 } from "@chakra-ui/react";
+
 import Post from "./Post";
 import React, { useEffect, useState } from "react";
+import { HiTrendingUp } from "react-icons/hi";
 
 function BestPosts() {
   const [posts, setPosts] = useState(null);
-  const [skeletonSize] = useState([1, 2, 3, 4, 5, 6]);
+  const [skeletonSize] = useState([1, 2, 3]);
 
   const fetchPosts = async () => {
     const response = await fetch(
@@ -27,7 +32,19 @@ function BestPosts() {
 
   return (
     <Box w={"90%"} mt={"2em"} mb={"2em"} ml={"1em"} mr={"1em"}>
-      <SimpleGrid columns={3} spacing={10} alignItems={"center"}>
+      <Flex mb={"1em"} alignItems={"center"}>
+        <Icon
+          as={HiTrendingUp}
+          color={useColorModeValue("black", "white")}
+          boxSize={"30"}
+          mr={"1em"}
+        />
+
+        <Text fontSize={"2xl"} fontWeight={"bold"}>
+          Assuntos mais populares
+        </Text>
+      </Flex>
+      <Flex flexWrap={"wrap"} justifyContent={"space-around"}>
         {posts === null
           ? skeletonSize.map(() => (
               <Box padding="6" boxShadow="lg" key={Math.random()}>
@@ -35,7 +52,7 @@ function BestPosts() {
                 <SkeletonText mt="4" noOfLines={4} spacing="4" />
               </Box>
             ))
-          : posts.map((post) => {
+          : posts.slice(0, 3).map((post) => {
               return (
                 <Post
                   authorName={post.authorName}
@@ -46,7 +63,7 @@ function BestPosts() {
                 />
               );
             })}
-      </SimpleGrid>
+      </Flex>
     </Box>
   );
 }
