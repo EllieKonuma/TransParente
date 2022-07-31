@@ -6,7 +6,13 @@ const DarkModeSwitch = () => {
   return (
     <IconButton
       aria-label="Toggle Drak Switch"
-      icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
+      icon={
+        colorMode === "dark" ? (
+          <SunIcon color={"white"} />
+        ) : (
+          <MoonIcon color={"white"} />
+        )
+      }
       onClick={toggleColorMode}
       colorScheme={"whiteAlpha"}
     />

@@ -30,7 +30,7 @@ export function MobileMenu() {
         colorScheme={"whiteAlpha"}
         size="md"
       >
-        <HamburgerIcon />
+        <HamburgerIcon color={"white"} />
       </Button>
       <Drawer
         isOpen={isOpen}
