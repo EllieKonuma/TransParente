@@ -1,10 +1,18 @@
-import { Flex, Icon, Text } from "@chakra-ui/react";
+import {
+  Flex,
+  Icon,
+  Text,
+  SkeletonCircle,
+  SkeletonText,
+  Box,
+} from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { BsStars } from "react-icons/bs";
 import RecentPost from "./RecentPost";
 
 function RecentPosts() {
   const [posts, setPosts] = useState(null);
+  const [skeletonSize] = useState([1, 2, 3]);
 
   const fetchPosts = async () => {
     const resp = await fetch(
@@ -34,7 +42,12 @@ function RecentPosts() {
         <Text fontSize={"2xl"}>Novas Postagens</Text>
       </Flex>
       {posts === null
-        ? ""
+        ? skeletonSize.map(() => (
+            <Box padding="6" boxShadow="lg" key={Math.random()}>
+              <SkeletonCircle size="10" />
+              <SkeletonText mt="4" noOfLines={4} spacing="4" />
+            </Box>
+          ))
         : posts.splice(0, 3).map((post) => {
             const authorName = getAuthorById(post.authorId).name;
             return (
