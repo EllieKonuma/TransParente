@@ -1,7 +1,15 @@
-import { Flex, Heading, Text } from "@chakra-ui/react";
-import { Link, NavLink } from "react-router-dom";
+import { Flex, Heading, HStack, Icon, Text } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+import { TbGenderTransgender } from "react-icons/tb";
 import React from "react";
 import DarkModeSwitch from "./DarkModeSwitch";
+import { MobileMenu } from "./MobileMenu";
+
+export const headerData = [
+  { label: "Início", path: "/" },
+  { label: "Blog", path: "/blog" },
+  { label: "Sobre Nós", path: "/sobre-nos" },
+];
 
 function Header() {
   return (
@@ -18,24 +26,38 @@ function Header() {
       top={"0px"}
     >
       <Link to={"/"}>
-        <Heading>TransParente</Heading>
-      </Link>
+        <HStack>
+          <Icon
+            as={TbGenderTransgender}
+            display={{ base: "flex", md: "none" }}
+            boxSize={"3em"}
+          />
 
-      <NavLink to={"/"}>
-        <Text fontSize={"2xl"}>Home</Text>
-      </NavLink>
-      <Link to={"/blog"}>
-        <Text fontSize={"2xl"}>Blog</Text>
+          <Heading _hover={{ textDecoration: "underline" }}>
+            TransParente
+          </Heading>
+        </HStack>
       </Link>
-      <Link to={"/sobre-nos"}>
-        <Text fontSize={"2xl"}>Sobre Nós</Text>
-      </Link>
-
-      <DarkModeSwitch />
+      <HStack display={{ base: "none", md: "flex" }}>
+        {headerData.map((item, i) => (
+          <Link key={i} to={item.path}>
+            <Text
+              fontSize={"2xl"}
+              ml={"1em"}
+              mr={"1em"}
+              _hover={{ textDecoration: "underline" }}
+            >
+              {item.label}
+            </Text>
+          </Link>
+        ))}
+      </HStack>
+      <HStack>
+        <DarkModeSwitch />
+        <MobileMenu />
+      </HStack>
     </Flex>
   );
 }
-
-// fazer estilização dos links do header
 
 export default Header;
