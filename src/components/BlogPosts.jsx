@@ -38,8 +38,8 @@ function BlogPosts() {
   return (
     <Flex flexDirection={"column"} w={"750px"}>
       {posts === null
-        ? skeletonSize.map(() => (
-            <Box padding="6" boxShadow="lg" key={Math.random()}>
+        ? skeletonSize.map((i) => (
+            <Box padding="6" boxShadow="lg" zIndex="-1" key={i}>
               <SkeletonCircle size="10" />
               <SkeletonText mt="4" noOfLines={4} spacing="4" />
             </Box>

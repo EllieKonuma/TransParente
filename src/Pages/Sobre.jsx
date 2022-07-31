@@ -4,7 +4,7 @@ import { Text, Flex, Box } from "@chakra-ui/react";
 
 import React from "react";
 
-function SobreNos() {
+function Sobre() {
   return (
     <Flex flexDirection={"column"} alignItems={"center"}>
       <Header />
@@ -32,4 +32,4 @@ function SobreNos() {
   );
 }
 
-export default SobreNos;
+export default Sobre;

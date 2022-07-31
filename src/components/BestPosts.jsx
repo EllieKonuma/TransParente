@@ -1,16 +1,16 @@
 import {
   Box,
+  Flex,
+  Icon,
   SkeletonCircle,
   SkeletonText,
   Text,
-  Icon,
-  Flex,
   useColorModeValue,
 } from "@chakra-ui/react";
 
-import TrendingPost from "./TrendingPost";
 import React, { useEffect, useState } from "react";
 import { HiTrendingUp } from "react-icons/hi";
+import TrendingPost from "./TrendingPost";
 
 function BestPosts() {
   const [posts, setPosts] = useState(null);
@@ -37,6 +37,7 @@ function BestPosts() {
           as={HiTrendingUp}
           color={useColorModeValue("black", "white")}
           boxSize={"30"}
+          ml={"6em"}
           mr={"1em"}
         />
 
@@ -46,10 +47,10 @@ function BestPosts() {
       </Flex>
       <Flex flexWrap={"wrap"} justifyContent={"space-around"}>
         {posts === null
-          ? skeletonSize.map(() => (
-              <Box padding="6" boxShadow="lg" key={Math.random()}>
+          ? skeletonSize.map((i) => (
+              <Box padding="6" boxShadow="lg" w={"400px"} zIndex="-1" key={i}>
                 <SkeletonCircle size="10" />
-                <SkeletonText mt="4" noOfLines={4} spacing="4" />
+                <SkeletonText mt="4" w="100%" noOfLines={2} spacing="4" />
               </Box>
             ))
           : posts

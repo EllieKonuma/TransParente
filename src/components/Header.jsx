@@ -8,7 +8,7 @@ import { MobileMenu } from "./MobileMenu";
 export const headerData = [
   { label: "Início", path: "/" },
   { label: "Blog", path: "/blog" },
-  { label: "Sobre Nós", path: "/sobre-nos" },
+  { label: "Sobre", path: "/sobre" },
 ];
 
 function Header() {

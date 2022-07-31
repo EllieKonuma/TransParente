@@ -1,18 +1,11 @@
-import {
-  Flex,
-  Icon,
-  Text,
-  SkeletonCircle,
-  SkeletonText,
-  Box,
-} from "@chakra-ui/react";
+import { Box, Flex, Icon, SkeletonText, Text, VStack } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { BsStars } from "react-icons/bs";
 import RecentPost from "./RecentPost";
 
 function RecentPosts() {
   const [posts, setPosts] = useState(null);
-  const [skeletonSize] = useState([1, 2, 3]);
+  const skeletonSize = useState([1, 2, 3]);
 
   const fetchPosts = async () => {
     const resp = await fetch(
@@ -36,15 +29,20 @@ function RecentPosts() {
   }, []);
 
   return (
-    <Flex flexDirection={"column"} maxW={"750px"}>
+    <VStack
+      alignItems={"flex-start"}
+      maxW={"750px"}
+      ml={"1em"}
+      mr={"1em"}
+      mb={"1em"}
+    >
       <Flex alignItems={"center"} mb={"1em"}>
         <Icon as={BsStars} boxSize={"25"} mr={"1em"} />
         <Text fontSize={"2xl"}>Novas Postagens</Text>
       </Flex>
       {posts === null
-        ? skeletonSize.map(() => (
-            <Box padding="6" boxShadow="lg" key={Math.random()}>
-              <SkeletonCircle size="10" />
+        ? skeletonSize.map((i) => (
+            <Box padding="6" boxShadow="lg" w={"750px"} zIndex="-1" key={i}>
               <SkeletonText mt="4" noOfLines={4} spacing="4" />
             </Box>
           ))
@@ -59,7 +57,7 @@ function RecentPosts() {
               />
             );
           })}
-    </Flex>
+    </VStack>
   );
 }
 

@@ -1,10 +1,14 @@
 import {
   Box,
   Flex,
+  HStack,
+  Icon,
+  Skeleton,
   SkeletonCircle,
   SkeletonText,
   Text,
 } from "@chakra-ui/react";
+import { ImPencil } from "react-icons/im";
 import Contribuinte from "./Contribuinte";
 
 import React, { useEffect, useState } from "react";
@@ -33,15 +37,16 @@ function Contribuintes() {
       h="550px"
       borderRadius={"10px"}
     >
-      <Text fontSize={"3xl"} fontWeight={"bold"}>
-        Autores
-      </Text>
+      <HStack>
+        <Icon as={ImPencil} boxSize={"25"} mr={"1em"} />
+        <Text fontSize={"2xl"}>Autores</Text>
+      </HStack>
       {authors === null
-        ? skeletonSize.map(() => (
-            <Box padding="6" boxShadow="lg" key={Math.random()}>
+        ? skeletonSize.map((i) => (
+            <HStack padding="6" boxShadow="lg" w={"300px"} key={i}>
               <SkeletonCircle size="10" />
-              <SkeletonText mt="4" noOfLines={4} spacing="4" />
-            </Box>
+              <Skeleton h="1em" w="100%" />
+            </HStack>
           ))
         : authors.map((author) => {
             return (
