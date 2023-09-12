@@ -11,17 +11,15 @@ import {
 import React, { useEffect, useState } from "react";
 import { HiTrendingUp } from "react-icons/hi";
 import TrendingPost from "./TrendingPost";
+import { getPosts } from "../controllers/postController";
 
 function BestPosts() {
   const [posts, setPosts] = useState(null);
   const [skeletonSize] = useState([1, 2, 3]);
 
+  //fetchPosts
   const fetchPosts = async () => {
-    const response = await fetch(
-      "https://my-json-server.typicode.com/elliekonuma/transparencia/posts"
-    );
-
-    const postsFromAPI = await response.json();
+    let postsFromAPI = await getPosts();
 
     setPosts(postsFromAPI);
   };

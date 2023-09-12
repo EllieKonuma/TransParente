@@ -19,7 +19,7 @@ function Contribuintes() {
 
   const fetchAuthors = async () => {
     const response = await fetch(
-      "https://my-json-server.typicode.com/elliekonuma/transparencia/authors"
+      "https://aerial-indecisive-store.glitch.me/authors"
     );
 
     const authorsFromAPI = await response.json();

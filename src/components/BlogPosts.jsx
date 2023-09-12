@@ -15,9 +15,7 @@ function BlogPosts() {
   const [skeletonSize] = useState([1, 2, 3]);
 
   const fetchPosts = async () => {
-    const resp = await fetch(
-      "https://my-json-server.typicode.com/elliekonuma/transparencia/posts"
-    );
+    const resp = await fetch("https://aerial-indecisive-store.glitch.me/posts");
     const postsFromApi = await resp.json();
 
     setPosts(postsFromApi);
@@ -25,7 +23,7 @@ function BlogPosts() {
 
   const getAuthorById = async (id) => {
     const resp = await fetch(
-      `https://my-json-server.typicode.com/elliekonuma/transparencia/authors/${id}`
+      `https://aerial-indecisive-store.glitch.me/authors/${id}`
     );
     const author = await resp.json();
 
